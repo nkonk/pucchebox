@@ -17,6 +17,7 @@ function configure(dbConfig) {
     if (dbConfig.isPostgreSQL()) {
         try {
             pg = require('pg');
+            pg.defaults.ssl = true;
         } catch (e) {
             pg = require('pg.js');
         }
